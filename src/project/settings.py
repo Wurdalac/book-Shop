@@ -123,4 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/WurdalaCC/book-Shop/static'
+STATIC_ROOT = '/home/WurdalaCC/book-Shop/static'  
+
+#all ready up to date
