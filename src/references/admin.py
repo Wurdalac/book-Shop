@@ -4,7 +4,6 @@ from django.contrib import admin
 from .models import News
 
 class NewsAdmin(admin.ModelAdmin):
-    search_fields = [name__name]
     list_display = [
         'title',
         'date'
@@ -12,7 +11,7 @@ class NewsAdmin(admin.ModelAdmin):
 
 admin.site.register(News, NewsAdmin)
 
-from . import models 
+from .models import City
 
 
 class CityAdmin(admin.ModelAdmin):
@@ -24,5 +23,25 @@ class CityAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(City, CityAdmin)
+
+
+from .models import Genres
+
+class GenresAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+admin.site.register(Genres, GenresAdmin)
+
+from .models import Author
+
+class AuthorAdmin(admin.ModelAdmin):
+    search_fields = ['name__name']
+    list_display = [
+        'first_name',
+        'last_name',
+        'middle_name'
+    ]
+
+admin.site.register(Author, AuthorAdmin)
 
 

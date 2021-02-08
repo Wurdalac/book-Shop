@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from references.views import home_page
+from references.views import cities_list
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_page),
+    path('cities/', cities_list)
 ]
+
