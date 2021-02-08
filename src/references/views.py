@@ -10,4 +10,4 @@ def home_page(request):
 def cities_list(request):
     cities = City.objects.all()
     context = {"cities": cities}
-    return render(request, template_name="cities.html")
+    return render(request, template_name="cities.html", context = context)

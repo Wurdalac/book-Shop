@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
     path('cities/', cities_list)
+    
 ]
 
