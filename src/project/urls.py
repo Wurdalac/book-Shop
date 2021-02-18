@@ -16,13 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from references.views import home_page
-from references.views import cities_list
+from references import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page),
-    path('cities/', cities_list)
-    
+    path('cities/', views.cities_list, name="cities-list"),
+    path('cities-cbv/', views.CitiesList.as_view(), name="cities-list-cbv"),
+    path('cities/<int:pk>/', views.city_detail, name="city-detail"),
+    path('cities-cbv/<int:pk>/', views.CityDetail.as_view(), name="city-detail-cbv"),
+    path('city-delete/<int:pk>/', views.city_delete, name="city-delete"),
+    path('city-delete-cbv/<int:pk>/', views.CityDelete.as_view(), name="city-delete-cbv"),
+    path('city-create/', views.city_create, name="city-create"),
+    path('city-create-cbv/', views.CityCreate.as_view(), name="city-create-cbv"),
+    path('city-update/<int:pk>/', views.city_update, name="city-update"),
 ]
 

@@ -7,20 +7,29 @@
     <title>City table</title>
 </head>
 <body>
+    <h1>{{ pk }}</h1>
     <table border='1'> 
         <tr>
             <td>#</td>
             <td>name</td>
             <td>description</td>
+            <td>actions</td>
         </tr>
         {% for city in cities %}
-        <tr>
-            <td>{{ city.pk }}</td>
-            <td>{{ city.name }}</td>
-            <td>{{ city.description }}</td>    
-        </tr>
+            <tr>
+                <td>{{ city.pk }}</td>
+                <td><a href="{% url 'city-detail' city.pk %}">{{ city.name }}</a></td>
+                <td>{{ city.description }}</td>       
+                <td><a href="{% url 'city-delete' city.pk %}">Delete</a></td>
+                <td><a href="{% url 'city-update' city.pk %}">Update</a></td>
+            </tr>
         {% endfor %}
     </table>
-
+    <a href="{% url 'city-create' %}">ADD City</a>
 </body>
-</html>
+</html> 
+
+
+
+
+

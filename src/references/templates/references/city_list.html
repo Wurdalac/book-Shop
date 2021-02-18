@@ -1,0 +1,90 @@
+{% extends "home.html" %}
+
+{% block main_content %}
+
+<main class="container">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Products</h1>
+    <p class="lead"> Soon there will be books here that you can not help but buy  ¯\_(ツ)_/¯</p>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Book</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">price $$ <small class="text-muted">/ pieces</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>there </li>
+          <li>is very </li>
+          <li>little</li>
+          <li>true</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Buy now</button>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Book</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">price $$ <small class="text-muted">/ pieces</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>there </li>
+            <li>is very </li>
+            <li>little</li>
+            <li>true</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-primary">Buy now</button>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Book</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">price $$ <small class="text-muted">/ pieces</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>there </li>
+            <li>is very </li>
+            <li>little</li>
+            <li>true</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-primary">Buy now</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div>
+    <table class="table table-success table-striped"> 
+        <tr>
+            <td>#</td>
+            <td>name</td>
+            <td>description</td>
+            <td>actions</td>
+        </tr>
+        {% for city in object_list %}
+        <tr>
+            <td>{{ city.pk }}</td>
+            <td><a href="{% url 'city-detail-cbv' city.pk %}">{{ city.name }}</a></td>
+            <td>{{ city.description }}</td>     
+            <td><a href="{% url 'city-delete-cbv' city.pk %}"><i class="bi bi-trash"></i></a>
+            <a href="{% url 'city-update' city.pk %}"><i class="bi bi-pencil"></i></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'city-create-cbv' %}"class="btn btn-danger">ADD City</a>
+  </div>
+
+  {% endblock main_content %}
+
+  
+
+  

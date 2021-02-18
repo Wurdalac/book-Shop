@@ -5,7 +5,7 @@ from django.db import models
 class City(models.Model):
     name = models.CharField(
         verbose_name="City's name",
-        max_length=20,
+        max_length=50,
         )
     description = models.TextField(
         verbose_name="City's description",

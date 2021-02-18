@@ -1,0 +1,13 @@
+{% extends "home.html" %}
+
+{% block main_content %}
+
+    <h1>City name {{ object.name }}</h1>
+    <a href="{% url 'cities-list-cbv' %}" class="btn btn-primary btn-block">All Cities</a><br>
+    {{ object.description|default:"Description is empty" }}<br>
+    <h2></h2>
+    
+    {{ object.created}} </br>
+    {{ object.updated}} </br>
+
+{% endblock main_content %}
